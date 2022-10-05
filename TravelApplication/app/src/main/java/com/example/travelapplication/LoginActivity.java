@@ -19,11 +19,19 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        AnhXa();
 
         txtvSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent=new Intent(LoginActivity.this, SignUpActivity.class);
+                startActivity(myIntent);
+            }
+        });
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent=new Intent(LoginActivity.this, ProfileActivity.class);
                 startActivity(myIntent);
             }
         });

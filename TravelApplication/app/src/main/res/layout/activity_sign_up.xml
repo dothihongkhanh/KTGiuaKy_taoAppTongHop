@@ -10,22 +10,29 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@drawable/wave">
-        <Button
-            android:id="@+id/buttonBackSU"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/ic_baseline_arrow_back_24"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            />
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/logo"
-            android:layout_gravity="center"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/buttonBackSU"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/ic_baseline_arrow_back_24"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="120dp"
+                />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/logo"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+
         <androidx.cardview.widget.CardView
             android:layout_width="350dp"
-            android:layout_height="500dp"
+            android:layout_height="450dp"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:elevation="8dp"
@@ -43,7 +50,7 @@
                     android:textStyle="bold"
                     android:textColor="#4169e1"
                     android:layout_gravity="center"
-                    android:layout_marginTop="25dp"/>
+                    android:layout_marginTop="15dp"/>
                 <EditText
                     android:id="@+id/editTextUserNameSU"
                     android:layout_width="300dp"
@@ -55,7 +62,7 @@
                     android:layout_gravity="center"
                     android:paddingLeft="10dp"
                     android:background="@drawable/boder_edittext"
-                    android:layout_margin="20dp"
+                    android:layout_margin="18dp"
                     android:drawableLeft="@drawable/ic_baseline_person_24"/>
                 <EditText
                     android:id="@+id/editTextPassSU"
@@ -101,7 +108,7 @@
                     android:layout_height="50dp"
                     android:text="signup"
                     android:textAllCaps="true"
-                    android:background="@drawable/boder_button"
+                    android:background="@drawable/custom_button"
                     android:layout_gravity="center"
                     android:layout_marginTop="30dp"
                     android:textSize="20sp"
