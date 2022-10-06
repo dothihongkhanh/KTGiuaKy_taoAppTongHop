@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<ImageView
+    android:id="@+id/imageViewPicture"
+    android:layout_width="100dp"
+    android:layout_height="100dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textviewName"
+        android:text="Name"
+        android:layout_toRightOf="@+id/imageViewPicture"/>
+    <TextView
+        android:id="@+id/textviewNameProvince"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mo ta"
+        android:layout_toRightOf="@id/imageViewPicture"
+        android:layout_below="@id/textviewName"/>
+    <TextView
+        android:id="@+id/textviewPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="gia"
+        android:layout_toRightOf="@id/imageViewPicture"
+        android:layout_below="@id/textviewNameProvince"/>
+
+</RelativeLayout>

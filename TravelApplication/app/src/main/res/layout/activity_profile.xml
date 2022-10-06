@@ -6,7 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileActivity">
-
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/content_frame"/>
     <RelativeLayout
         android:id="@+id/relativeTop"
         android:layout_width="match_parent"
@@ -22,10 +25,7 @@
                 android:background="@color/royalblue"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
         </com.google.android.material.appbar.AppBarLayout>
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/content_frame"/>
+
         <ImageView
             android:id="@+id/image"
             android:layout_width="match_parent"

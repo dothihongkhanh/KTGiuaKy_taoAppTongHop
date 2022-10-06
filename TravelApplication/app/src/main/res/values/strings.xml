@@ -7,4 +7,7 @@
     <string name="nav_AppInfo">App info</string>
     <string name="nav_Logout">Logout</string>
 
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
 </resources>
