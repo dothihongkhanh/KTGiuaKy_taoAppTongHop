@@ -12,16 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TravelApplication"
         tools:targetApi="31">
-
         <activity
-            android:name=".BottomNavActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".DetailActivity"
+            android:name=".MainActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -34,6 +26,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".SignUpActivity"
             android:exported="false">
@@ -42,7 +35,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".NavActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

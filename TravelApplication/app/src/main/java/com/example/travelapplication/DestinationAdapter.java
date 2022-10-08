@@ -10,21 +10,22 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class DestinationAdapter extends BaseAdapter {
+
+public class DestinationAdapter  extends BaseAdapter {
 
     private Context context;
     private int layout;
-    private List<Destination> arrayList;
+    private List<Destination> destinationList;
 
-    public DestinationAdapter(Context context, int layout, List<Destination> arrayList) {
+    public DestinationAdapter(Context context, int layout, List<Destination> destinationList) {
         this.context = context;
         this.layout = layout;
-        this.arrayList = arrayList;
+        this.destinationList = destinationList;
     }
 
     @Override
     public int getCount() {
-        return arrayList.size(); //tra ve so luong item
+        return destinationList.size();//tra ve so luong item
     }
 
     @Override
@@ -37,22 +38,40 @@ public class DestinationAdapter extends BaseAdapter {
         return 0;
     }
 
+    private class ViewHolder{
+        ImageView imgPicture;
+        TextView txtName,txtNameProvince, txtPrice ;
+    }
+
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        view = inflater.inflate(layout, null);
-        Destination destination = arrayList.get(i);//tra ve vi tri arraylist
 
-        //anh xa
-        TextView tvName = view.findViewById(R.id.textviewName);
-        TextView tvNameProvince = view.findViewById(R.id.textviewNameProvince);
-        TextView tvPrice = view.findViewById(R.id.textviewPrice);
-        ImageView ivPicture = view.findViewById(R.id.imageViewPicture);
+        ViewHolder holder;
 
-        tvName.setText(destination.getName());
-        tvNameProvince.setText(destination.getNameProvince());
-        tvPrice.setText(destination.getPrice());
-        ivPicture.setImageResource(destination.getPicture());
+        if(view == null ){
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+            view = inflater.inflate(layout ,null);
+            holder = new ViewHolder();
+            // ánh xạ view
+            //anh xa
+            holder = new ViewHolder();
+            holder.txtName = (TextView) view.findViewById(R.id.textviewName);
+            holder.txtNameProvince = (TextView) view.findViewById(R.id.textviewNameProvince);
+            holder.txtPrice = (TextView) view.findViewById(R.id.textviewPrice);
+            holder.imgPicture = (ImageView) view.findViewById(R.id.imageViewPicture);
+
+            view.setTag(holder);
+        }else{
+            holder = (ViewHolder) view.getTag();
+        }
+//gan gia tri
+        Destination destination = destinationList.get(i);
+        holder.txtName.setText(destination.getName());
+        holder.txtNameProvince.setText(destination.getNameProvince());
+        holder.txtPrice.setText(destination.getPrice());
+        holder.imgPicture.setImageResource(destination.getPicture());
+
         return view;
     }
 }

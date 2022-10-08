@@ -4,24 +4,25 @@
     android:layout_height="180dp"
     android:background="#00fa9a"
     android:orientation="vertical"
-    android:padding="20dp"
+    android:padding="16dp"
     android:gravity="bottom">
 
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@drawable/avt"/>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/avata"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DO THI HONG KHANH"
+        android:text="ĐỖ THỊ HỒNG KHÁNH"
         android:textSize="18sp"
-        android:textColor="@color/white"/>
+        android:layout_marginTop="5dp"
+        android:textColor="@color/purple_700"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ahahah"
-        android:textSize="16sp"
-        android:textColor="@color/white"/>
+        android:text="2050531200212"
+        android:textSize="15sp"
+        android:textColor="@color/purple_700"/>
 
 </LinearLayout>

@@ -15,9 +15,11 @@
         android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-light"
         android:text="Welcome to my travel application!"
-        android:textColor="#00fa9a"
+        android:textColor="@color/white"
         android:textSize="35sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:shadowColor="@color/purple_700"
+        android:shadowRadius="15"/>
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/imageviewWelcome"
@@ -38,6 +40,7 @@
         android:background="@drawable/custom_button"
         android:text="sign in"
         android:textSize="22sp"
+        android:textColor="@color/purple_700"
         android:textStyle="bold"
         />
 
@@ -51,7 +54,8 @@
         android:background="@drawable/custom_button"
         android:text="sign up"
         android:textSize="22sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/purple_700"/>
 
 
 </RelativeLayout>

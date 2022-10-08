@@ -9,13 +9,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
-
-import fragment.settingLang_fragment;
 
 public class ProfileActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -25,13 +25,18 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
     private static  final  int FRAGMENT_CHANGEPASS = 2;
     private static  final  int FRAGMENT_APPINFO = 3;
 
+    BottomNavigationView bottomNavigationView ;
+
     private int currentFragment = FRAGMENT_HOME;
     private DrawerLayout drawerLayout;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        bottomNavigationView = findViewById(R.id.bottom_nav);
 
         //add toolbar, bat su kien khi click vao 3 dau gach
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -46,18 +51,48 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
         navigationView.setNavigationItemSelectedListener(this);
         //replaceFracment(new homefragmet()); //vao phat la ra home
         //navigationView.getMenu().findItem(R.id.nav_home).setChecked(true);// vao phat la ra home -> item home da duoc chon
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                if(item.getItemId() == R.id.nav_profile){
+                    Intent intent=new Intent(getApplicationContext(),ProfileActivity.class);
+                    startActivity(intent);
+                }
+                if(item.getItemId() == R.id.nav_home1){
+                    Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(intent);
+
+                }
 
 
+                return true;
+                /*int id= item.getItemId();
+                if(id==R.id.nav_home1){
+                    Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(intent);
+                }else if(id==R.id.nav_profile){
+                    Intent intent=new Intent(getApplicationContext(),ProfileActivity.class);
+                    startActivity(intent);
+                }*/
+                //dong drawer lai
+                //return true;
+            }
+        });
     }
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id= item.getItemId();
         if(id==R.id.nav_home){
+            Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(intent);
+
 
         }else if(id==R.id.nav_SettingLanguage){
             if(currentFragment != FRAGMENT_SETTINGLANG){
-                replaceFracment(new settingLang_fragment());
+                //replaceFracment(new SettingLangFragment());
                 currentFragment = FRAGMENT_SETTINGLANG;
             }
         }else if(id==R.id.nav_ChangePassword){
@@ -65,7 +100,8 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
         }else if(id==R.id.nav_AppInfo){
 
         }else if(id==R.id.nav_Logout){
-
+            Intent intent=new Intent(getApplicationContext(),StartActivity.class);
+            startActivity(intent);
         }
         //dong drawer lai
         drawerLayout.closeDrawer(GravityCompat.START);
@@ -86,5 +122,6 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
         transaction.replace(R.id.content_frame, fragment); //content_frame: la id cua layout ma ta se replace fragment vao
         transaction.commit();
     }
+
 
 }
