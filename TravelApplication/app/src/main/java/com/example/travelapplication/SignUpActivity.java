@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.travelapplication.databinding.ActivityMainBinding;
+
 public class SignUpActivity extends AppCompatActivity {
     EditText edtxtUNsignup;
     EditText edtxtPWsignup;
@@ -20,11 +22,12 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         AnhXa();
+        hideUnderBarInEditText(edtxtPWsignup);
 
         btnBackSU.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent=new Intent(SignUpActivity.this, LoginActivity.class);
+                Intent myIntent=new Intent(SignUpActivity.this, StartActivity.class);
                 startActivity(myIntent);
             }
         });
@@ -36,5 +39,8 @@ public class SignUpActivity extends AppCompatActivity {
         edtxtEmail=(EditText) findViewById(R.id.editTextEmail);
         edtxtPhone=(EditText) findViewById(R.id.editTextSDT);
         btnBackSU=(Button)  findViewById(R.id.buttonBackSU);
+    }
+    public void hideUnderBarInEditText(EditText editText){
+        editText.setBackgroundResource(android.R.color.transparent);
     }
 }

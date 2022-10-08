@@ -21,9 +21,9 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
 
     //phan biet dang o Flagment nao
     private static  final  int FRAGMENT_HOME = 0;
-    private static  final  int FRAGMENT_SETTINGLANG = 0;
-    private static  final  int FRAGMENT_CHANGEPASS = 0;
-    private static  final  int FRAGMENT_APPINFO = 0;
+    private static  final  int FRAGMENT_SETTINGLANG = 1;
+    private static  final  int FRAGMENT_CHANGEPASS = 2;
+    private static  final  int FRAGMENT_APPINFO = 3;
 
     private int currentFragment = FRAGMENT_HOME;
     private DrawerLayout drawerLayout;
@@ -46,6 +46,8 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
         navigationView.setNavigationItemSelectedListener(this);
         //replaceFracment(new homefragmet()); //vao phat la ra home
         //navigationView.getMenu().findItem(R.id.nav_home).setChecked(true);// vao phat la ra home -> item home da duoc chon
+
+
     }
 
     @Override
@@ -84,4 +86,5 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
         transaction.replace(R.id.content_frame, fragment); //content_frame: la id cua layout ma ta se replace fragment vao
         transaction.commit();
     }
+
 }

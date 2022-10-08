@@ -10,13 +10,25 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@drawable/wave">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/logo" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/buttonBackWC"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/ic_baseline_arrow_back_24"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="120dp"
+                />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/logo"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
 
         <androidx.cardview.widget.CardView
             android:layout_width="350dp"
@@ -44,6 +56,7 @@
                     android:layout_width="300dp"
                     android:layout_height="52dp"
                     android:hint="Username"
+                    android:drawablePadding="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     tools:layout_editor_absoluteY="60dp"
@@ -53,20 +66,23 @@
                     android:layout_margin="20dp"
                     android:drawableLeft="@drawable/ic_baseline_person_24"/>
 
-                <EditText
-                    android:id="@+id/editTextPass"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="300dp"
-                    android:layout_height="52dp"
-                    android:hint="Password"
-                    android:layout_below="@id/editTextUserName"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="162dp"
-                    android:drawableLeft="@drawable/ic_baseline_lock_24"
+                    android:layout_height="50dp"
+                    app:passwordToggleEnabled="true"
+                    android:layout_gravity="center_horizontal"
                     android:background="@drawable/boder_edittext"
-                    android:layout_gravity="center"
-                    android:paddingLeft="10dp"
-                    android:inputType="textPassword"/>
+                    app:startIconDrawable="@drawable/ic_baseline_lock_24">
+                    <EditText
+                        android:id="@+id/editTextPass"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="#00000000"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:paddingLeft="10dp" />
+                </com.google.android.material.textfield.TextInputLayout>
                 <TextView
                     android:id="@+id/textViewForgot"
                     android:layout_width="wrap_content"
